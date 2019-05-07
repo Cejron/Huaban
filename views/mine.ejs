@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="huaban.ico">
+    <link rel="stylesheet" href="stylesheets/reset.css">
+    <link rel="stylesheet" href="stylesheets/header.css">
+    <link rel="stylesheet" href="stylesheets/mine.css">
+
+
+    <title>是你啊丶的花瓣个人主页</title>
+
+</head>
+
+<body>
+    <div class="page">
+        <%include header.ejs %>
+        <% var userMsg=user.userMsg[0] %>
+        <div class="user-page">
+            <div class="wrapper clearfix">
+
+                <div class="user-card">
+                    <div class="maozi"></div>
+                    <div class="without-side clearfix">
+                        <div class="avatar-unit">
+                            <div class="img">
+                                <img src="<%= userMsg.user_img %>" alt="" class="current-avatar">
+                            </div>
+                            <div class="counts clearfix">
+                                <a href="#" class="followers">
+                                    <div class="num">85</div>
+                                    <div class="sub">粉丝</div>
+                                </a>
+                                <a href="#" class="follows">
+                                    <div class="num">25</div>
+                                    <div class="sub">关注</div>
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="head-line">
+                            <div class="name"><%= userMsg.user_name %></div>
+                        </div>
+                        <div class="about clearfix"><%= userMsg.description %></div>
+                        <div class="action-btns">
+                            <a href="setting" class="btn">
+                                <i class="icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tabs">
+                        <a href="#" class="tab tabactive">25 画板</a>
+                        <a href="#" class="tab">2348 采集</a>
+                        <a href="#" class="tab">63 喜欢</a>
+                        <a href="#" class="tab">社交</a>
+
+                    </div>
+                </div>
+                <div id="board" class="sort sort-lists clearfix">
+                    <div class="wfc add-board">
+                        <div class="inner">
+                            <i></i>
+                            <span>创建画板</span>
+                        </div>
+                    </div>
+                    <% var Board=Board %>
+                    <% Board.forEach(function(board){%>
+                    <div class="wfc board inited">
+                        <a href="#" class="link">
+                            <div class="board_img large">
+                                <img src="<%=board.pin[0].pin_img%>" class="large">
+                            </div>
+                            <div class="board_img">
+                                <% if (board.pin.length>1){ %>
+                                <img src="<%=board.pin[1].pin_img%>">
+                                <% } %>
+                            </div>
+                            <div class="board_img">
+                                <% if (board.pin.length>2){ %>
+                                <img src="<%=board.pin[2].pin_img%>">
+                                <% } %>
+                            </div>
+                            <div class="board_img">
+                                <% if (board.pin.length>3){%>
+                                <img src="<%=board.pin[3].pin_img%>">
+                                <% } %>
+                            </div>
+
+                            <div class="cover">
+                                <h3><%=board.board_name%></h3>
+                                <h4><%=board.board_desc%></h4>
+                                <div class="pin-count"><%=board.pin.length%></div>
+                            </div>
+                        </a>
+                        <div class="followboard">
+                            <a href="#" class="btn">
+                                <strong>编辑</strong>
+                            </a>
+                        </div>
+                    </div>
+
+                    <% }) %>
+
+
+                </div>
+                <div id="pins" class="sort clearfix">
+                    pins
+                </div>
+                <div id="favor" class="sort clearfix">
+                    favor
+                </div>
+                <div id="contact" class="sort clearfix">
+                    contact
+                </div>
+            </div>
+            <div class="wrapper underline"></div>
+        </div>
+    </div>
+    <script src="javascripts/login_bar.js"></script>
+
+</body>
+<script>
+    var tabs = document.getElementsByClassName('tab');
+    var sort = document.getElementsByClassName('sort');
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].onclick = () => {
+            for (let j = 0; j < tabs.length; j++) {
+                if (i == j) {
+                    tabs[j].className = 'tab tabactive';
+                    sort[j].style.display = 'block';
+                } else {
+                    tabs[j].className = 'tab';
+                    sort[j].style.display = 'none';
+                }
+            }
+        }
+    }
+</script>
+
+</html>

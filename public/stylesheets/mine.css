@@ -1,0 +1,346 @@
+/*整个页面*/
+
+.page {
+    min-width: 1024px;
+    padding-top: 48px;
+    height: 100%;
+}
+
+.maozi {
+    width: 150px;
+    height: 100px;
+    background: #fff;
+    border-radius: 4px;
+    position: absolute;
+    left: 15px;
+    top: -40px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .02), 0 4px 8px 0 rgba(0, 0, 0, .02);
+}
+
+.user-card {
+    background: #fff;
+    margin-top: 60px;
+    position: relative;
+}
+
+/* .a {
+    background-color: rgb(253, 253, 253);
+    min-height: 600px;
+} */
+
+.without-side {
+    height: 170px;
+    background: #fff;
+    position: relative;
+    padding-left: 180px;
+}
+
+.avatar-unit {
+    background: #fff;
+    border-radius: 4px;
+    position: absolute;
+    left: 20px;
+    top: -35px;
+    width: 140px;
+}
+
+.img {
+    position: relative;
+    max-height: 140px;
+    max-width: 140px;
+    overflow: hidden;
+}
+
+.current-avatar {
+    /* max-height: 140px; */
+    width: 140px;
+    
+}
+
+.counts {
+    background: #fcfcfc;
+    text-align: center;
+}
+
+.followers {
+    display: block;
+    float: left;
+    width: 70px;
+    height: 40px;
+    padding-top: 10px;
+    border-right: 1px solid #ededed;
+    text-decoration: none;
+}
+
+.follows {
+    display: block;
+    height: 40px;
+    padding-top: 10px;
+    text-decoration: none;
+}
+.followers:hover .num,.followers:hover .sub,.follows:hover .num,.follows:hover .sub{
+    color: #9a0000;
+}
+.num {
+    font-size: 16px;
+    font-weight: 700;
+    color: #444;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.sub {
+    font-size: 12px;
+    line-height: 1;
+    color: #999;
+}
+
+.head-line {
+    margin: 20px 0 10px;
+    line-height: 1;
+    position: relative;
+}
+
+.head-line .name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #444;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.about {
+    color: #777;
+    line-height: 1.5;
+    word-wrap: break-word;
+    height: 42px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.action-btns {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    border-radius: 2px;
+    font-size: 14px;
+    padding: 0 12px;
+    height: 28px;
+    line-height: 28px;
+    background: #ededed;
+    border: 1px solid #ededed;
+    cursor: pointer;
+    text-decoration: none;
+    color: #444;
+    white-space: nowrap;
+    user-select: none;
+    text-align: center;
+    box-shadow: 0 0 0 transparent;
+    
+}
+.btn:hover{
+    border: 1px solid #d9d9d9;
+    background: #d9d9d9;
+    color: #444;
+    text-decoration: none;
+    box-shadow: none;
+}
+.action-btns .btn {
+    margin-left: 10px;
+}
+
+i.icon{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/ic-setting.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+    vertical-align: middle;
+    margin: 0 -2px;
+}
+.tabs{
+    background: #fff;
+    border-top: 1px solid #ededed;
+    position: relative;
+}
+.tab{
+    font-size: 14px;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 20px;
+    color: #777;
+    display: inline-block;
+    text-decoration: none;
+}
+.tab:hover{
+    color: #9a0000;
+}
+.tabactive{
+    background: #fff;
+    color: #444;
+    font-weight: 700;
+}
+/*画板*/
+#board,#pins,#favor,#contact{
+    position: relative;
+    min-width: 500px;
+    margin: 16px auto 0; 
+}
+.sort-lists{
+    display: block;
+    margin-left: -16px !important;
+}
+
+.add-board{
+    width: 236px;
+    height: 350px;
+    float: left;
+    margin: 0 0 15px 16px;
+    position: relative;
+    left: auto;
+    top: auto;
+    background: rgba(255,255,255,.5);;
+    box-shadow: 0 1px 3px rgba(0,0,0,.02), 0 4px 8px rgba(0,0,0,.02);
+    border-radius: 3px;
+    overflow: hidden;
+    -webkit-transition: transform .15s ease-in-out,box-shadow .15s ease-in-out;
+    cursor: pointer;
+}
+.add-board:hover{
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,.02), 0 16px 32px -4px rgba(0,0,0,.17);
+    -webkit-transform: translateY(-1px);
+}
+.inner{
+    margin:10px;
+    height: 326px;
+    border: 2px dashed #dedede;
+}
+.inner i{
+    display: block;
+    width: 48px;
+    height: 48px;
+    background: url(../images/icon_add_rbig.png) 0 0 no-repeat;
+    margin: 128px auto 10px;
+}
+.inner span{
+    display: block;
+    color: #777;
+    text-align: center;
+}
+.board{
+    width: 236px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,.02), 0 4px 8px rgba(0,0,0,.02);
+    border-radius: 3px;
+    overflow: hidden;
+    font-size: 12px;
+    background-color: #fff;
+    position: relative;
+    float: left;
+    margin: 0 0 15px 16px;
+    left: 0;
+    top: 0;
+    transition: opacity .24s ease-in-out,transform .24s ease-in-out,box-shadow .36s ease-in-out;
+    height: 350px;
+}
+.board:hover{
+    box-shadow: 0 1px 3px rgba(0,0,0,.02), 0 16px 32px -4px rgba(0,0,0,.17);
+    -webkit-transform: translateY(-1px);
+}
+.link{
+    display: block;
+    height: 299px;
+    padding: 10px 0 0 10px;
+    overflow: hidden;
+    position: relative;
+}
+div.board_img{
+    float: left;
+    width:70px;
+    height: 70px;
+    margin: 0 3px 3px 0;
+    border: 0;
+    overflow: hidden;
+
+}
+div.board_img.large{
+    width: 216px;
+    height: 216px;
+    overflow: hidden;
+}
+.link img{
+    width:70px;
+}
+.link img.large{
+    width: 216px; 
+}
+.cover{
+    background-color: rgba(0,0,0,.1);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 216px;
+    height: 289px;
+    background: url(../images/board_info_cover.png) 0 0 repeat-x;
+    transition: background-color .36s ease-in-out;
+}
+.cover h3{
+    padding: 8px 0 0 8px;
+    font-size: 14px;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+}
+.cover h4{
+    font-size: 12px;
+    color: #fff;
+    margin-top: 5px;
+    padding: 0 8px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+    height: 38px;
+    overflow: hidden;
+    transition: opacity .2s linear;
+    opacity: 0;
+}
+.cover:hover h4{
+    opacity: 1;
+}
+.pin-count{
+    position: absolute;
+    top: 188px;
+    left: 8px;
+    font-size: 12px;
+    color: #fff;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 5px;
+    background: rgba(0, 0, 0, .4);
+    border-radius: 2px;
+}
+.followboard{
+    padding: 0 10px 11px;
+    text-align: center;
+}
+.followboard .btn{
+    display: block;
+}
+.btn strong{
+    font-weight: 400;
+}
+/*画板*/
+.underline{
+    border-top: 2px dashed #dedede;
+    padding-top: 20px;
+}
+/*整个页面*/

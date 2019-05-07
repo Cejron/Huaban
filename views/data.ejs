@@ -1,0 +1,13 @@
+<html>
+    <head></head>
+    <body>
+       <h1><%- data%></h1> 
+    </body>
+    <script>
+        var h1=document.getElementsByTagName('h1')[0];
+        var text=JSON.parse(h1.innerHTML);
+        console.log(text)
+        h1.innerHTML=text[0].user_act+text[0].user_password;
+        // console.log(text[0])
+    </script>
+</html>

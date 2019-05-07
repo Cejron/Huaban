@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,minimum-scale=0.1, maximum-scale=1.0,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="icon" href="huaban.ico">
+    <link rel="stylesheet" href="stylesheets/reset.css">
+    <link rel="stylesheet" href="stylesheets/unlogin_header.css">
+    <link rel="stylesheet" href="stylesheets/unlogin_search.css">
+    <title>搜索结果</title>
+</head>
+
+<body>
+    <div class="page">
+        <% include unlogin_header.ejs%>
+        <div class="wrapper clearfix">
+            <div class="search-result">
+                <div class="search-box">
+                    <div class="search-group">
+                        <form action="" class="long-form">
+                            <input type="text" class="clear-input search-result-form" placeholder="搜索你喜欢的">
+                            <a class="result-go"></a>
+                        </form>
+                        <div class="search-type">
+                            <div class="search_switch">
+                                <a href="" class="tab tab-active">555 采集</a>
+                                <a href="" class="tab">44 画板</a>
+                                <a href="" class="tab">9 用户</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-pin">
+
+                    <div class="pin">
+                        <div class="actions">
+                            <div class="left">
+                                <a href="#" class="repin btn pin-default rbtn">
+                                    <span>采集</span>
+                                </a>
+                                <a href="#" class="repin btn rbtn pin-quick">
+                                    <img src="images/quick_pin.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="right">
+                                <a href="#" class="edit btn">
+                                    <span>编辑</span>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="#" target="_self" class="img loaded">
+                            <img src="datas/01.jpg" alt="">
+                            <div class="cover"></div>
+                        </a>
+                        <div class="convo attribution clearfix">
+                            <a href="#" class="img x">
+                                <img src="images/user_avt.jpg" alt="" class="avt">
+                            </a>
+                            <div class="text">
+                                <div class="inner">
+                                    <div class="line">
+                                        <a href="#" class="author x">是你啊</a>采集到
+                                    </div>
+                                    <div class="line">
+                                        <a href="#" class="x">它</a>
+                                    </div>
+                                    <a href="#" title="评论" class="replyButton"></a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script src="javascripts/unlogin_bar.js"></script>
+
+</html>

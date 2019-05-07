@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,minimum-scale=0.1, maximum-scale=1.0,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="icon" href="huaban.ico">
+    <link rel="stylesheet" href="stylesheets/reset.css">
+    <link rel="stylesheet" href="stylesheets/unlogin_header.css">
+    <link rel="stylesheet" href="stylesheets/category.css">
+    <title>分类</title>
+</head>
+
+<body>
+    <div class="page">
+        <% include unlogin_header.ejs%>
+        <div class="wrapper clearfix">
+            <div class="category-result">
+                <div class="category-box">
+                    <div class="category-group">
+                        <div class="category-type">
+                            <div class="category-switch">
+                                <% Pins.forEach(function(category){ %>
+                                <a href="" class="tab"><%=category.pin_category%></a>
+                                <%})%>
+                                <a href="" class="tab tabactive">采集</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="waterfall" class="category-pin">
+                    <% category.pin.forEach(function(pin){%>
+                    <div class="pin">
+                        <div class="actions">
+                            <div class="left">
+                                <a href="#" class="repin btn pin-default rbtn">
+                                    <span>采集</span>
+                                </a>
+                                <a href="#" class="repin btn rbtn pin-quick">
+                                    <img src="images/quick_pin.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="right">
+                                <a href="#" class="edit btn">
+                                    <span>编辑</span>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="#" target="_self" class="img loaded">
+                            <img src="<%=pin.pin_img%>" alt="">
+                            <div class="cover"></div>
+                        </a>
+                        <div class="convo attribution clearfix">
+                            <a href="#" class="img x">
+                                <img src="<%=pin.owner_img%>" alt="" class="avt">
+                            </a>
+                            <div class="text">
+                                <div class="inner">
+                                    <div class="line">
+                                        <a href="#" class="author x"><%=pin.owner_name%></a>采集到
+                                    </div>
+                                    <div class="line">
+                                        <a href="#" class="x">它</a>
+                                    </div>
+                                    <a href="#" title="评论" class="replyButton"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%})%>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script src="javascripts/unlogin_bar.js"></script>
+<script src="javascripts/waterfall.js"></script>
+
+</html>

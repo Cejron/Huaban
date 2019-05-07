@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="huaban.ico">
+    <link rel="stylesheet" href="stylesheets/reset.css">
+    <link rel="stylesheet" href="stylesheets/msg_atvt.css">
+    <link rel="stylesheet" href="stylesheets/header.css">
+    <title>我的消息_动态_花瓣</title>
+
+</head>
+
+<body>
+    <div class="page">
+        <%include header.ejs %>
+
+        <div class="wrapper992 clearfix">
+            <div class="message_page">
+                <div class="flat-tabs">
+                    <a class="tab tab_active">消息</a>
+                    <a class="tab">动态</a>
+                </div>
+                <div class="msg-box msg">
+
+                </div>
+                <div class="msg-box atvt">
+                    <div class="list-item">
+                        <a href="" class="avt-img">
+                            <img src="datas/08.jpg" alt="">
+                        </a>
+                        <div class="msg-details">
+                            <a href="" class="link-color">Amiliar</a>
+                            <div class="main-content">
+                                <span>转采了</span>
+                                <a href="" class="link-color">你的采集</a>
+                                <span>到</span>
+                                <a href="" class="link-color">长发及腰，青春常驻</a>
+                            </div>
+                        </div>
+                        <a href="" class="apin-link">
+                            <img src="datas/06.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="javascripts/login_bar.js"></script>
+    <script>
+        var tabs = document.getElementsByClassName('tab');
+        var msg_box = document.getElementsByClassName('msg-box');
+        // console.log(msg_box)
+        msg_box[1].style.display = 'none'
+        tabs[0].onclick = () => {
+            tabs[0].className = 'tab tab_active';
+            tabs[1].className = 'tab';
+            msg_box[0].style.display = 'block'
+            msg_box[1].style.display = 'none'
+        }
+        tabs[1].onclick = () => {
+            tabs[1].className = 'tab tab_active';
+            tabs[0].className = 'tab';
+            msg_box[1].style.display = 'block'
+            msg_box[0].style.display = 'none'
+        }
+
+    </script>
+</body>

@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body,div,ul,li,a,h1,h2,h3,h4,h5,span,dl,dt,dd,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 14px;
+    font-family: "helvetica neue",arial,sans-serif;
+    color: #444;
+    overflow-x: hidden;
+    background-color: #f5f5f5;
+}
+html{
+    background:#f5f5f5;
+    --gbshadow-0:0 none;
+    --gbshadow-1:0 1px 3px 0 rgba(0,0,0,.02),0 4px 8px 0 rgba(0,0,0,.02);
+    --gbshadow-2:0 1px 3px 0 rgba(0,0,0,.05),0 8px 16px 0 rgba(0,0,0,.07);
+    --gbshadow-3:0 1px 3px 0 rgba(0,0,0,.02),0 16px 32px 0 rgba(0,0,0,.07);
+    --gbshadow-hover:0 1px 3px rgba(0,0,0,.02),0 16px 32px -4px rgba(0,0,0,.17);
+}
+table{
+    border-collapse:collapse;
+    border-spacing:0
+}
+i,s,u,b{
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+}
+img{
+    border: none;
+    display: block;
+}
+input,form,button,textarea{
+    padding: 0;
+    margin: 0;
+    border: none;
+    resize: none;
+    outline: 0;
+}
+ul,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #444;
+    outline: 0;
+}
+
+table{
+    border-collapse: collapse;
+}
+.clearfix::before,.clearfix::after{
+    content: "";
+    height: 0;
+    display: block;
+    clear: both;
+    visibility: hidden;
+    overflow: hidden;
+}
+.clearfix{
+    zoom: 1;
+    /* 兼容ie6,7,8 */
+}

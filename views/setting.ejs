@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="huaban.ico">
+    <link rel="stylesheet" href="stylesheets/reset.css">
+    <link rel="stylesheet" href="stylesheets/setting.css">
+    <link rel="stylesheet" href="stylesheets/header.css">
+
+    <title>账号设置</title>
+</head>
+
+<body>
+    <div class="page">
+        <!-- <div class="header">
+            <div class="wrapper992"></div>
+        </div> -->
+        <%include header.ejs %>
+        <%var userMsg=user.userMsg[0] %>
+        <!-- ----------------- -->
+        <div class="wrapper992 setting-page">
+            <div class="user-setting">
+                <h1 id="getuserid" userid="<%=userMsg.id%>">账号设置</h1>
+                <div class="setting-items">
+                    <!-- --------------------------------------------------- -->
+                    <div class="setting-item">
+                        <div class="title">个人资料
+                            <div class="preview"><%=userMsg.user_name%></div>
+                        </div>
+                        <a class="edit">编辑</a>
+                        <div class="holder">
+                            <div class="inner">
+                                <form action="">
+                                    <table class="list">
+                                        <tbody>
+                                            <tr>
+                                                <td class="name">昵称:</td>
+                                                <td><input id="user_name" type="text" class="clear-input"
+                                                        value="<%=userMsg.user_name%>"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="name">所在城市:</td>
+                                                <td><input id="user_city" type="text" class="clear-input"
+                                                        value="<%=userMsg.user_city%>"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="name">性别:</td>
+                                                <td id="" class="sex" data-value="<%=userMsg.user_sex%>">
+                                                    <label for="sex"><input type="radio" value="1" name="sex">男</label>
+                                                    <label for="sex"><input type="radio" value="2" name="sex">女</label>
+                                                    <label for="sex"><input type="radio" value="0" name="sex">保密</label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="name">关于自己:</td>
+                                                <td class="about-td">
+                                                    <textarea id="description" name="about"
+                                                        class="clear-input about-area"><%=userMsg.description%></textarea>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <a href="" class="rbtn btn" id="person_save">
+                                                        <strong>保存</strong>
+                                                    </a>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ------------------------------------------------------ -->
+                    <div class="setting-item">
+                        <div class="title">头像
+                            <div class="preview">
+                                <img id="preview_avatar" src="<%=userMsg.user_img %>" owner_id="<%=userMsg.id %>">
+                            </div>
+                        </div>
+                        <a class="edit">编辑</a>
+                        <div class="holder">
+                            <div class="inner">
+                                <table class="list">
+                                    <tbody>
+                                        <tr>
+                                            <td class="avatar">
+                                                <img src="<%=userMsg.user_img %>" alt="" id="current_avatar">
+                                            </td>
+                                            <td class="buttons">
+                                                <a href="#" class="btn btn18 upload">
+                                                    <strong>上传头像</strong>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ---------------------------------------------------- -->
+                    <div class="setting-item">
+                        <div class="title">密码
+                            <div class="preview">******</div>
+                        </div>
+                        <a class="edit">编辑</a>
+                        <div class="holder">
+                            <div class="inner">
+                                <form action="">
+                                    <table class="list">
+                                        <tbody>
+                                            <tr>
+                                                <td class="name">当前密码:</td>
+                                                <td>
+                                                    <input type="password" name="password[old]" class="clear-input">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="name">新密码:</td>
+                                                <td>
+                                                    <input type="password" name="password[new]" class="clear-input">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="name">确认新密码:</td>
+                                                <td>
+                                                    <input type="password" name="password[confirm]" class="clear-input">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="name">确认新密码:</td>
+                                                <td>
+                                                    <a id="password_save" class="btn rbtn">保存</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ---------------------------------------------------- -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="javascripts/login_bar.js"></script>
+    <script src="javascripts/setting.js"></script>
+
+    <script>
+        $("#person_save").on('click', function (e) {
+            e.preventDefault();
+            var user_name = $("#user_name").val();
+            var user_city = $("#user_city").val();
+            var radio = document.getElementsByName("sex");
+            let user_sex;
+            for (let j = 0; j < radio.length; j++) {
+                if (radio[j].checked == true) {
+                    user_sex = Number(radio[j].getAttribute('value'));
+                }
+            }
+            var description = $("#description").val();
+            var id = Number(document.getElementById("preview_avatar").getAttribute('owner_id'));
+            $.ajax({
+                type: 'post',
+                url: '/save/saveUser',
+                data: {
+                    'id': id,
+                    'user_name': user_name,
+                    'user_city': user_city,
+                    'user_sex': user_sex,
+                    'description': description
+                },
+                success: function (data) {
+                    if (data) {
+                        alert('保存成功')
+                        window.location.href = '/setting';
+                    }
+                },
+                error: function () {
+                    console.log('保存失败')
+                }
+            })
+        });
+
+        $("#password_save").on('click', function (e) {
+            e.preventDefault();
+            var user_id = Number(document.getElementById('getuserid').getAttribute('userid'));
+            console.log(user_id)
+            var old_pass = $('input[name="password[old]"]').val();
+            console.log(old_pass)
+            var new_pass = $('input[name="password[new]"]').val();
+            console.log(new_pass)
+            var confirm_pass = $('input[name="password[confirm]"]').val();
+            console.log(confirm_pass)
+            $.ajax({
+                type: 'post',
+                url: '/save/savePass',
+                data: {
+                    'user_id': user_id,
+                    'old_pass': old_pass,
+                    'new_pass': new_pass,
+                    'confirm_pass': confirm_pass
+                },
+                success: function (data) {
+                    console.log(data)
+                    switch (data.state) {
+                        case 1:
+                            window.alert('密码修改成功，请重新登录！');
+                            window.location.href = '/';
+                            break;
+                        case 2:
+                            window.alert('两次密码不一致！');
+                            break;
+                        case 0:
+                            window.alert('初始密码错误！');
+                            break;
+                        default:
+                            break;
+                    }
+                },
+                error: function () {
+                    console.log('fail')
+                }
+            })
+        });
+    </script>
+</body>
+
+
+
+</html>

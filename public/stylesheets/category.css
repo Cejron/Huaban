@@ -1,0 +1,254 @@
+.page{
+    min-width: 1024px;
+    padding-top: 48px;
+    height: 100%;
+}
+
+.category-box{
+    position: relative;
+    min-height: 24px;
+    margin: 5px 0 10px;
+    padding: 10px 0 12px;
+}
+.category-group{
+    border: 1px solid #EDEDED;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.02), 0 4px 8px 0 rgba(0,0,0,.02);
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.02), 0 4px 8px 0 rgba(0,0,0,.02);
+    background-color: #fafafa;
+    border-radius: 4px;
+    position: relative;
+}
+.category-type{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.tab{
+    font-size: 14px;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 20px;
+    color: #777;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.tab:hover{
+    color: rgb(0, 0, 0);
+}
+.tabactive{
+    background: #fff;
+    color: #444;
+    font-weight: 700;
+}
+.category-pin{
+    position: relative;
+    min-height: 500px;
+    margin: 16px auto 0;
+    margin-top: 10px;
+}
+/*pin*/
+/* 整个item*/
+.pin {
+    width: 236px;
+    font-size: 12px;
+    border-radius: 3px;
+    overflow: hidden;
+    transition: transform .15s ease-in-out, box-show .15s ease-in-out;
+    box-shadow: 0 1px 3px rgba(0,0,0,.02), 0 4px 8px rgba(0,0,0,.02);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .02), 0 4px 8px rgba(0, 0, 0, .02);
+    position: absolute;
+}
+.pin:hover{
+    box-shadow: 0 1px 3px rgba(0,0,0,.02), 0 16px 32px -4px rgba(0,0,0,.17);
+    transform: translateY(-1px);
+}
+.pin a.img img{
+    position: relative;
+}
+/* 整个item*/
+
+.actions {
+    display: block;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    left: 6px;
+    z-index: 3;
+    display: none;
+}
+.pin:hover .actions{
+    display: block;
+} 
+.actions>div {
+    position: absolute;
+}
+
+.action .left {
+    top: 0;
+    left: 0;
+}
+
+.actions .right {
+    top: 0;
+    right: 0;
+}
+
+.btn {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 2px;
+    background: #ededed;
+    border: 1px solid #ededed;
+    font-size: 14px;
+    padding: 0 12px;
+    text-decoration: none;
+    white-space: nowrap;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.repin {
+    box-shadow: none;
+}
+
+.rbtn {
+    text-shadow: none;
+    background: #ec414d;
+    color: #fff;
+    border: 1px solid #ec414d;
+}
+
+.pin-default {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    float: left;
+}
+
+.pin-quick {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    float: left;
+    width: 11px;
+    height: 32px;
+    padding: 0 5px 0 4px;
+    border: 0;
+    border-left: 1px solid #c73841;
+}
+
+.pin-quick img {
+    position: relative;
+    top: 10px;
+}
+
+.loaded {
+}
+
+a.img {
+    display: block;
+    position: relative;
+}
+
+a.img img {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 236px;
+}
+
+.cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 236px;
+    height: 100%;
+}
+.pin:hover .cover{
+    background-color: rgba(255, 255, 255, 0.075);
+}
+
+.convo {
+    background: #fafafa;
+}
+.convo a.img img{
+    width: 34px;
+    height: 34px;
+}
+
+.attribution {
+    color: #999;
+    border-top: 1px solid #f2f2f2;
+    position: relative;
+}
+
+.pin .attribution {
+    padding: 0 15px;
+    background: #fff;
+}
+
+.attribution .img {
+    width: 34px;
+    height: 34px;
+    margin: 16px 0;
+    display: block;
+    float: left;
+    background-color: #faf7f7;
+    position: relative;
+}
+
+.attribution a {
+    color: #9e7e6b;
+}
+
+.attribution img.avt {
+    display: block;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+}
+
+.attribution .text {
+    margin-left: 34px;
+    height: 51px;
+    padding: 15px 0 0 10px;
+    line-height: 1.5;
+}
+
+.attribution .text .inner {
+    height: 37px;
+    overflow: hidden;
+}
+
+.attribution .text .inner .line {
+    display: inline-block;
+    width: 100%;
+    float: left;
+}
+
+.author {
+    float: left;
+    max-width: 120px;
+    max-width: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.replyButton {
+    display: block;
+    width: 26px;
+    height: 16px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    /* visibility: hidden; */
+    background: url(../images/home_comment_act_icon.png) 0 0 no-repeat;
+    cursor: pointer;
+    -webkit-transition: opacity .2s linear;
+    /* opacity: 0; */
+}
+/*pin*/
